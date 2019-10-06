@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RandomPasswordGenerator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script.js"></script>
+</head>
+<body class="body bg-light">
+    <nav class="navbar navbar-light navbar-expand-lg bg-light">
+        <a class="navbar-brand" href="#">Password Generator</a>
+    </nav>
+    <div class = "container">
+        <div class="row">
+            <div class="col-lg-8 col-sm-12 mx-auto">
+                <div class="content shadow p-3 mb-5 bg-white rounded">
+                    <h2>Generate a Password</h2>
+                    <hr />
+                    <input type="text" id="box">
+                    <hr />
+                    <button onclick="generate()" class="btn btn-danger" id="generate">Generate Password</button>
+                    <button onclick="copy()" class="btn btn-secondary" id="copy">Copy to Clipboard</button>
+                    </div> 
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>
