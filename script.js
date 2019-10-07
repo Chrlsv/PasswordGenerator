@@ -1,62 +1,55 @@
-    
-    //create variables to apply in function
-    var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    var lowercase = "abcdefghijklmnopqrstuvwxyz";
-    var number = "1234567890";
-    var symbols = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
-    lCaseInput = document.getElementById("lowercase"),
-    uCaseInput = document.getElementById("uppercase"),
-    symbInput = document.getElementById("symbols"),
-    numbInput = document.getElementById("numbers"),
-    lengthInput = document.getElementById("length"),
-    passwordFeild = document.getElementById("ps-field"),
-    generateButton = document.getElementById("generate"),
-    copyButton = document.getElementById("copy"),
-    plength,
-    userPassword,
-    psCharset;
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowercase = "abcdefghijklmnopqrstuvwxyz";
+var number = "1234567890";
+var symbols = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
+userPassword
+pscharset;
 
-    //Generating a random password
-    function generate(){
-        userPassword = "";
-        psCharset = "";
-        //if statements for alertboxes
-        if(confirm("uppercase")){
-            psCharset += uppercase;
-        }
-        if(confirm("lowercase")){
-            psCharset += lowercase;
-        }
-        if(confirm("number")){
-            psCharset += number;
-        }
-        if(confirm("symbols")){
-            psCharset += symbols;
-        }
-        plength = Number(lengthInput.value);
-
-        //algorithm to generate random generated password based on characters
-        for(let i = 0, i < plength; i++){
-            userPassword += psCharset.charAt(Math.floor(Math.random() * psCharSet.length));
-        }
-
-
-
-    
-
-    
-
-    //var password ='';
-
-    //var charactersLength = characters.length;
-
-    //creating for loop to randomize and generate the characters
-    //for(var i = 0; i < length; i++){
-        //password += characters.charAt(Math.floor(Math.random()* characters.Length));
+function generate(){
+    pscharset = "";
+    userPassword = "";
+    //prompt for alertboxes; choosing range from 8 to 128
+    var password = prompt("Please enter the length of your password: ", "");
+    if (password === 8 || password === 128){
     }
-    //document.getElementById("box").value = password;
-    //return password;
+    else if(password < 8){ 
+        alert("Must be 8 to 128 characters");
+    }
+    else if(password > 128){
+        alert("Must be 8 to 128 characters");
+    }
+
+    //condition being set IF the user wants specific characters for password
+    if(confirm("Would you like uppercase characters?")){
+        pscharset += uppercase;
+    }
+    if(confirm("Would you like lowercase characters?")){
+        pscharset += lowercase;
+    }
+    if(confirm("Would you like numbers?")){
+        pscharset += number;
+    }
+    if(confirm("Would you like symbols/punctuations?")){
+        pscharset += symbols;
+    }
+
+    //for loop to generate random password
+    for(let i = 0; i < password; i++){
+        userPassword += pscharset.charAt(Math.floor(Math.random() * pscharset.length));
+    }
+    //to populate textbox and return value
+    document.getElementById("textbox").value = userPassword;
+    return userPassword;
+
 }
 
+//copy to clipboard and create an alert
+function copy(){
 
+    document.getElementById("textbox").select();
 
+    document.execCommand("copy");
+
+    alert("Password copied to clipboard!");
+
+}

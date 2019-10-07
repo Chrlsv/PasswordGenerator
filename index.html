@@ -10,15 +10,21 @@
 </head>
 <body class="body bg-light">
     <nav class="navbar navbar-light navbar-expand-lg bg-light">
-        <a class="navbar-brand" href="#">Password Generator</a>
+    <div class="container">
+        <ul class="nav navbar-nav mx-auto">
+            <li class="nav-item active">
+                <a class="navbar-brand" id="navb" href="#">Password Generator</a>
+            </li>
+        </ul>
     </nav>
+    </div>
     <div class = "container">
         <div class="row">
             <div class="col-lg-8 col-sm-12 mx-auto">
                 <div class="content shadow p-3 mb-5 bg-white rounded">
-                    <h2>Generate a Password</h2>
+                    <h4>Generate a Password</h4>
                     <hr />
-                    <input type="text" id="box">
+                    <input type="text" id="textbox">
                     <hr />
                     <button onclick="generate()" class="btn btn-danger" id="generate">Generate Password</button>
                     <button onclick="copy()" class="btn btn-secondary" id="copy">Copy to Clipboard</button>
